@@ -4,6 +4,14 @@ exports.config = {
   user: process.env.BROWSERSTACK_USER,
   key: process.env.BROWSERSTACK_ACCESS_KEY,
 
+  services: [
+    ['chromedriver', {
+        logFileName: 'wdio-chromedriver.log', // default
+        outputDir: 'driver-logs', // overwrites the config.outputDir
+        args: ['--silent']
+    }]
+  ],
+
   updateJob: false,
   specs: ['__tests__/browserstack/*.e2e.js'],
   exclude: [],
