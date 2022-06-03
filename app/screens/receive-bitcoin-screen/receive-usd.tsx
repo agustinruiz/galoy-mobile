@@ -311,7 +311,9 @@ const ReceiveUsd = () => {
 
       <View style={styles.fieldsContainer}>
         <View style={styles.invoiceDisplay}>
-          {!loading && <PaymentDestinationDisplay data={invoice?.paymentRequest} />}
+          {!loading && (
+            <PaymentDestinationDisplay destination={invoice?.paymentRequest} />
+          )}
           {loading && <ActivityIndicator />}
         </View>
 
